@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYM Management System</title>
+    <title>Помощь - GYM Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
             <nav class="main-nav">
                 <button class="mobile-menu-toggle" aria-label="Открыть меню">☰</button>
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="help.html">Помощь</a></li>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="help.html" class="active">Помощь</a></li>
                     <li><a href="booking.html">Запись</a></li>
                     <li><a href="#auth">Вход/Регистрация</a></li>
                 </ul>
@@ -23,19 +23,56 @@
     </header>
 
     <main class="content-grid">
-        <section class="news-section">
-            <h2 class="section-title">Последние обновления</h2>
-            <div class="news-grid">
+        <section class="help-section">
+            <h2 class="section-title">Помощь и поддержка</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Адрес</h3>
+                    <p>г. Челябинск, ул. Ворошилова, 12</p>
+                    <p>Вход со стороны двора</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Телефоны</h3>
+                    <p>Горячая линия: +7 (351) 123-45-67</p>
+                    <p>Техподдержка: +7 (351) 765-43-21</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 7:00 - 23:00</p>
+                    <p>Сб-Вс: 8:00 - 22:00</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Форма обратной связи</h3>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer style="position: absolute; width: 100%; bottom: 0;" class="main-footer">
+    <footer class="main-footer">
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>Контакты</h3>
-                <p>Телефон: +7 (999) 123-45-67</p>
-                <p>Email: admin@gym-system.ru</p>
+                <p>Телефон: +7 (351) 123-45-67</p>
+                <p>Email: support@gym-system.ru</p>
             </div>
         </div>
     </footer>

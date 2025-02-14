@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYM Management System</title>
+    <title>Запись - GYM Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,9 +13,9 @@
             <nav class="main-nav">
                 <button class="mobile-menu-toggle" aria-label="Открыть меню">☰</button>
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="index.html">Главная</a></li>
                     <li><a href="help.html">Помощь</a></li>
-                    <li><a href="booking.html">Запись</a></li>
+                    <li><a href="booking.html" class="active">Запись</a></li>
                     <li><a href="#auth">Вход/Регистрация</a></li>
                 </ul>
             </nav>
@@ -23,19 +23,76 @@
     </header>
 
     <main class="content-grid">
-        <section class="news-section">
-            <h2 class="section-title">Последние обновления</h2>
-            <div class="news-grid">
+        <section class="booking-section">
+            <h2 class="section-title">Управление записями</h2>
+            <div class="controls">
+                <div class="search-filter">
+                    <input type="text" id="searchInput" placeholder="Поиск по ФИО">
+                    <select id="genderFilter">
+                        <option value="">Все</option>
+                        <option value="Мужской">Мужской</option>
+                        <option value="Женский">Женский</option>
+                    </select>
+                    <select id="dateSort">
+                        <option value="asc">Дата: по возрастанию</option>
+                        <option value="desc">Дата: по убыванию</option>
+                    </select>
+                </div>
+                <button id="addBookingBtn" class="btn-primary">Добавить запись</button>
+            </div>
+
+            <div class="bookings-list">
+                <table id="bookingsTable">
+                    <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Дата</th>
+                            <th>Пол</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
+
+    <div id="addBookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Добавить запись</h2>
+            <form id="addBookingForm">
+                <div class="form-group">
+                    <label for="fullName">ФИО:</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingDate">Дата:</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Пол:</label>
+                    <select id="gender" required>
+                        <option value="Мужской">Мужской</option>
+                        <option value="Женский">Женский</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Стоимость:</label>
+                    <input type="number" id="price" required>
+                </div>
+                <button type="submit" class="btn-primary">Добавить</button>
+            </form>
+        </div>
+    </div>
 
     <footer style="position: absolute; width: 100%; bottom: 0;" class="main-footer">
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>Контакты</h3>
-                <p>Телефон: +7 (999) 123-45-67</p>
-                <p>Email: admin@gym-system.ru</p>
+                <p>Телефон: +7 (351) 123-45-67</p>
+                <p>Email: support@gym-system.ru</p>
             </div>
         </div>
     </footer>

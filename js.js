@@ -1,4 +1,3 @@
-// Auth Modal Logic
 const authModal = document.getElementById('authModal');
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
@@ -6,7 +5,6 @@ const switchToRegister = document.getElementById('switchToRegister');
 const switchToLogin = document.getElementById('switchToLogin');
 const closeModal = document.querySelector('.close');
 
-// Open modal from navigation
 document.querySelector('a[href="#auth"]').addEventListener('click', (e) => {
     e.preventDefault();
     authModal.style.display = 'flex';
@@ -14,7 +12,6 @@ document.querySelector('a[href="#auth"]').addEventListener('click', (e) => {
     registerForm.classList.add('hidden');
 });
 
-// Close modal
 closeModal.addEventListener('click', () => {
     authModal.style.display = 'none';
 });
@@ -25,7 +22,6 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Switch between forms
 switchToRegister.addEventListener('click', (e) => {
     e.preventDefault();
     loginForm.classList.add('hidden');
@@ -93,3 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.getElementById('feedbackForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    alert(`Сообщение отправлено!\n\nИмя: ${formData.name}\nEmail: ${formData.email}\nСообщение: ${formData.message}`);
+    
+    document.getElementById('feedbackForm').reset();
+});
+
